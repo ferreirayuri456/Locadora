@@ -1,0 +1,42 @@
+<mat-toolbar class="app-title">Cadastrar Filme</mat-toolbar>
+<div class="main-div">
+    <mat-card class="center width50">
+        <form [formGroup]="cadastro">
+            <mat-card-content>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Titulo" name="titulo" formControlName="titulo" />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="urlFoto" name="urlFoto" formControlName="urlFoto" />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <input matInput [matDatepicker]="picker" placeholder="dataLancamento" name="dataLancamento" formControlName="dataLancamento" />
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <textarea matInput placeholder="descricao" name="descricao" formControlName="descricao"></textarea>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Nota IMDb *" name="nota" formControlName="nota" />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="URL IMDb *" name="url" formControlName="url" />
+                </mat-form-field>
+
+                <!-- <mat-form-field>
+                    <input titulo="Gênero *" controlName="genero" [formGroup]="cadastro" />
+                </mat-form-field> -->
+            </mat-card-content>
+            <mat-card-actions>
+                <button type="submit" color="accent" mat-raised-button>Salvar</button>
+                <button type="reset" color="warn" mat-raised-button>Cancelar</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>
