@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ValidarCamposService } from '../shared/components/campos/validar-campos.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ValidarCamposService } from 'src/app/shared/validators/validar-campos.service';
 
 @Component({
   selector: 'app-cadastro-filmes',
@@ -8,7 +8,6 @@ import { ValidarCamposService } from '../shared/components/campos/validar-campos
   styleUrls: ['./cadastro-filmes.component.css']
 })
 export class CadastroFilmesComponent implements OnInit {
-
 
   cadastro: FormGroup
 

@@ -7,11 +7,13 @@ import { TopoComponent } from './topo/topo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material.module';
 import { ListagemFilmesComponent } from './listagem-filmes/listagem-filmes.component';
-import { CadastroFilmesComponent } from './cadastro-filmes/cadastro-filmes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { CamposModule } from './shared/components/campos/campos.module';
+import { FilmesModule } from './filmes/filmes.module';
+import { MatCardModule } from '@angular/material/card';
+import { CadastroFilmesModule } from './filmes/cadastro-filmes/cadastro-filmes.module';
 
 
 @NgModule({
@@ -20,7 +22,6 @@ import { CamposModule } from './shared/components/campos/campos.module';
     AppComponent,
     TopoComponent,
     ListagemFilmesComponent,
-    CadastroFilmesComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +32,9 @@ import { CamposModule } from './shared/components/campos/campos.module';
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
-    CamposModule
+    CamposModule,
+    CadastroFilmesModule,
+    FilmesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

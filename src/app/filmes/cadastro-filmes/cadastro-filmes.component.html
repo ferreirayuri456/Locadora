@@ -1,20 +1,19 @@
+<p>cadastro-filmes works!</p>
+
+
 <mat-toolbar class="app-title">Cadastrar Filme</mat-toolbar>
 <div class="main-div">
     <mat-card class="center width50">
         <form [formGroup]="cadastro">
             <mat-card-content>
-                
                 <app-input-text></app-input-text>
-
                 <mat-form-field class="full-width">
                     <input matInput placeholder="urlFoto" name="urlFoto" formControlName="urlFoto" />
-                    <mat-error *ngIf="validar.hasErrorValidated(f.urlFoto,'minlength')">O
-                        campo deve ter no mínimo 10 caracteres</mat-error>
+                    <mat-error *ngIf="validar.hasErrorValidated(f.urlFoto,'minlength')">O campo deve ter no mínimo 10 caracteres</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
-                    <input matInput readonly [matDatepicker]="picker" placeholder="dataLancamento *"
-                        name="dataLancamento" formControlName="dataLancamento" (click)="picker.open()" />
+                    <input matInput readonly [matDatepicker]="picker" placeholder="dataLancamento *" name="dataLancamento" formControlName="dataLancamento" (click)="picker.open()" />
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                     <mat-error *ngIf="validar.hasErrorValidated(f.dataLancamento,'required')">
@@ -27,18 +26,15 @@
 
                 <mat-form-field class="full-width">
                     <input matInput placeholder="Nota IMDb" name="nota" formControlName="nota" />
-                    <mat-error *ngIf="validar.hasErrorValidated(f.nota,'required')">Campo
-                        obrigatório</mat-error>
-                    <mat-error *ngIf="validar.hasErrorValidated(f.nota,'min')">O
-                        campo deve ter valor mínimo de 0</mat-error>
-                    <mat-error *ngIf="validar.hasErrorValidated(f.nota, 'max' )">O
-                        campo deve ter valor máximo de 10</mat-error>
+                    <mat-error *ngIf="validar.hasErrorValidated(f.nota,'required')">Campo obrigatório
+                    </mat-error>
+                    <mat-error *ngIf="validar.hasErrorValidated(f.nota,'min')">O campo deve ter valor mínimo de 0</mat-error>
+                    <mat-error *ngIf="validar.hasErrorValidated(f.nota, 'max' )">O campo deve ter valor máximo de 10</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <input matInput placeholder="URL IMDb" name="url" formControlName="url" />
-                    <mat-error *ngIf="validar.hasErrorValidated(f.url, 'minlength')">O
-                        campo deve ter no mínimo 10 caracteres</mat-error>
+                    <mat-error *ngIf="validar.hasErrorValidated(f.url, 'minlength')">O campo deve ter no mínimo 10 caracteres</mat-error>
                 </mat-form-field>
 
                 <!-- <mat-form-field class="full-width">

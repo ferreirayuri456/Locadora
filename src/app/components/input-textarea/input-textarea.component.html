@@ -1,0 +1,6 @@
+<mat-form-field class="full-width">
+    <textarea matInput placeholder="descricao" name="descricao" formControlName="descricao"></textarea>
+    <mat-error *ngIf="fieldValidService.hasErrorValidated(control, 'required')">O TÍTULO É OBRIGATÓRIO</mat-error>
+    <mat-error *ngIf="fieldValidService.hasErrorValidated(control, 'minlength')">O CAMPO PRECISA TER NO MÍNIMO 2 CARACTERES</mat-error>
+    <mat-error *ngIf="fieldValidService.hasErrorValidated(control, 'maxlength')">O CAMPO DEVE TER NO MÁXIMO 256 CARACTERES</mat-error>
+</mat-form-field>
