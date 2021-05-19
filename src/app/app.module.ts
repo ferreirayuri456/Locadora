@@ -11,6 +11,7 @@ import { CadastroFilmesComponent } from './cadastro-filmes/cadastro-filmes.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { CamposModule } from './shared/components/campos/campos.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    CamposModule
   ],
   providers: [],
   bootstrap: [AppComponent]
