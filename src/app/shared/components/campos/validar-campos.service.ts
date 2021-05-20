@@ -18,6 +18,10 @@ export class ValidarCamposService {
 
   }
 
+  lengthValidate(control: AbstractControl, errorName: string): number{
+    const error = control.errors[errorName];
+    return error.requiredLength || error.min || error.max || 0;
+  }
   constructor() { }
 
 }

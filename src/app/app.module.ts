@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopoComponent } from './topo/topo.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DemoMaterialModule } from './material.module';
-import { ListagemFilmesComponent } from './listagem-filmes/listagem-filmes.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { CamposModule } from './shared/components/campos/campos.module';
-import { FilmesModule } from './filmes/filmes.module';
-import { MatCardModule } from '@angular/material/card';
 import { CadastroFilmesModule } from './filmes/cadastro-filmes/cadastro-filmes.module';
-
+import { FilmesModule } from './filmes/filmes.module';
+import { ListagemFilmesComponent } from './listagem-filmes/listagem-filmes.component';
+import { DemoMaterialModule } from './material.module';
+import { CamposModule } from './shared/components/campos/campos.module';
+import { TopoComponent } from './topo/topo.component';
 
 @NgModule({
   //a directive, a component, or a pipe.

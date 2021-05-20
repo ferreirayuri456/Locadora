@@ -8,6 +8,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { DemoMaterialModule } from 'src/app/material.module';
+import { CamposModule } from 'src/app/shared/components/campos/campos.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DemoMaterialModule } from 'src/app/material.module';
     MatFormFieldModule,
     MatDatepickerModule,
     MatSelectModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    CamposModule
   ]
 })
 export class CadastroFilmesModule { }

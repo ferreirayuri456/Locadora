@@ -1,5 +1,6 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, FormControl } from '@angular/forms';
 import { ValidarCamposService } from 'src/app/shared/validators/validar-campos.service';
 
 @Component({
@@ -9,7 +10,13 @@ import { ValidarCamposService } from 'src/app/shared/validators/validar-campos.s
 })
 export class CadastroFilmesComponent implements OnInit {
 
+  
+
+  titulo: string;
   cadastro: FormGroup
+  controlName: string;
+  generos = new FormControl();
+  generosList: string[] = ['Drama', 'Ação', 'Romance', 'Terror', 'Aventura', 'Geek', 'Sensual']
 
   constructor(private fb: FormBuilder, public validar: ValidarCamposService) {
    }
@@ -18,6 +25,11 @@ export class CadastroFilmesComponent implements OnInit {
      this.cadastro.markAllAsTouched();
      return this.cadastro.controls;
    }
+
+
+  //  get formControl(): AbstractControl {
+  //   return this.cadastro.controls[this.controlName];
+  // }
 
   ngOnInit(): void {
     this.cadastro = this.fb.group({

@@ -23,6 +23,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DemoMaterialModule,
     ReactiveFormsModule,
     FormsModule
+  ],
+  exports: [
+    InputTextComponent,
+    InputNumberComponent,
+    InputDateComponent,
+    InputTextareaComponent,
+    InputSelectComponent
   ]
 })
 export class CamposModule { }
