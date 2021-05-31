@@ -1,21 +1,43 @@
-<p>listagem-filmes works!</p>
+<mat-toolbar class="app-title">Listagem de Filmes</mat-toolbar>
+<mat-card class="float-left margin10 filtro-listagem">
+    <form autocomplete="off" novalidate [formGroup]="filtros">
+        <div class="float-left width50">
+            <div class="padding10">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Titulo *" name="titulo" formControlName="titulo" />
+                </mat-form-field>
+            </div>
+        </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <mat-card class="col-xs-6 col-sm-6 col-md-6 card" *ngFor="let filme of filmes" infiniteScroll (scrolled)="onScroll()">
-            <mat-card-header>
-                <mat-card-title>{{filme.titulo}}</mat-card-title>
-                <mat-card-subtitle>Nota: {{filme.nota}}</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image [src]="filme.urlFoto" />
-            <mat-divider></mat-divider>
-            <br>
-            <mat-card-content>
-                <p>{{filme.descricao}}</p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-raised-button color="accent">Abrir</button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
-</div>
+        <div class="float-left width50">
+            <div class="padding10">
+                <mat-select [formControl]="generos" multiple>
+                    <mat-select-trigger>
+                        {{generos.value ? generos.value[0] : ''}}
+                        <span *ngIf="generos.value?.length >1" class="example=additional-selection">
+                            (+{{generos.value.legth - 1}} {{generos.value?.length == 2 ? 'other': 'others'}} )
+                        </span>
+                    </mat-select-trigger>
+                    <mat-option *ngFor="let generos of generosList" [value]=generos>{{generos}}</mat-option>
+                </mat-select>
+            </div>
+        </div>
+    </form>
+</mat-card>
+
+
+<mat-card class="col-xs-6 col-sm-6 col-md-6 card" *ngFor="let filme of filmes" infiniteScroll (scrolled)="onScroll()">
+    <mat-card-header>
+        <mat-card-title>{{filme.titulo}}</mat-card-title>
+        <mat-card-subtitle>Nota: {{filme.nota}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="filme.urlFoto" />
+    <mat-divider></mat-divider>
+    <br>
+    <mat-card-content>
+        <p>{{filme.descricao}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="accent">Abrir</button>
+    </mat-card-actions>
+</mat-card>
