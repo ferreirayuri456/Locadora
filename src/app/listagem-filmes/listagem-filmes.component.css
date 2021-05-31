@@ -1,17 +1,19 @@
 .home-content {
     display: flex;
     flex-wrap: wrap;
-    width: calc(100% - 20px);
+    width: calc(100% - 50px);
     justify-content: space-between;
     padding: 10px;
 }
 
 .card {
-    margin-bottom: 10px;
+    max-width: 300px;
+    margin-bottom: 250px;
+    float: left;
 }
 
 .mat-card-image {
-    width: 460px;
+    width: 268px;
     height: 268px;
     margin: auto;
     display: block;

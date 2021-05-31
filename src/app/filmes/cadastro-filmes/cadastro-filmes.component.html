@@ -1,10 +1,10 @@
 <p>cadastro-filmes works!</p>
 
 
-<mat-toolbar class="app-title">Cadastrar Filme</mat-toolbar>
+<!-- <mat-toolbar class="app-title">Cadastrar Filme</mat-toolbar> -->
 <div class="main-div">
     <mat-card class="center width50">
-        <form autocomplete="off" novalidate [formGroup]="cadastro">
+        <form autocomplete="off" novalidate [formGroup]="cadastro" (ngSubmit)="submit()" (ngReset)="reiniciaForm()">
             <mat-card-content>
                 <mat-form-field class="full-width">
                     <input matInput placeholder="Titulo *" name="titulo" formControlName="titulo" />

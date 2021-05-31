@@ -10,6 +10,10 @@ import { InputDateComponent } from './components/campos/input-date/input-date.co
 import { InputSelectComponent } from './components/campos/input-select/input-select.component';
 import { InputTextComponent } from './components/campos/input-text/input-text.component';
 import { InputTextareaComponent } from './components/campos/input-textarea/input-textarea.component';
+import { ErrorComponent } from './components/error/error.component';
+import { AlertaComponent } from './components/alerta/alerta.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 
@@ -21,7 +25,9 @@ import { InputTextareaComponent } from './components/campos/input-textarea/input
     InputDateComponent,
     InputTextareaComponent,
     InputSelectComponent,
-    InputTextComponent
+    InputTextComponent,
+    AlertaComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +36,8 @@ import { InputTextareaComponent } from './components/campos/input-textarea/input
     MatFormFieldModule,
     MatDatepickerModule,
     MatSelectModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    MatDialogModule
   ],
   exports: [
     InputNumberComponent,

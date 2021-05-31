@@ -1,19 +1,21 @@
 <p>listagem-filmes works!</p>
 
-<div class="home-content">
-    <mat-card class="card">
-        <mat-card-header>
-            <mat-card-title>Movie title</mat-card-title>
-            <mat-card-subtitle>Movie subtitle</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="../../assets/images/angular-material-post.png" alt="Photo of a Shiba Inu" />
-        <mat-divider></mat-divider>
-        <br>
-        <mat-card-content>
-            <p>description image</p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button color="accent">Open</button>
-        </mat-card-actions>
-    </mat-card>
+<div class="container-fluid">
+    <div class="row">
+        <mat-card class="col-xs-6 col-sm-6 col-md-6 card" *ngFor="let filme of filmes" infiniteScroll (scrolled)="onScroll()">
+            <mat-card-header>
+                <mat-card-title>{{filme.titulo}}</mat-card-title>
+                <mat-card-subtitle>Nota: {{filme.nota}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="filme.urlFoto" />
+            <mat-divider></mat-divider>
+            <br>
+            <mat-card-content>
+                <p>{{filme.descricao}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="accent">Abrir</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>
