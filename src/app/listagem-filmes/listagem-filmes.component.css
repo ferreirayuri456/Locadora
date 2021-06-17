@@ -3,19 +3,19 @@
     flex-wrap: wrap;
     width: calc(100% - 20px);
     justify-content: space-between;
-     padding: 10px;
-    .home-card {
-      margin-bottom: 10px;
-  
-    }
-  }
-  
-  .filtro-listagem {
+    padding: 10px;
+}
+
+.home-card {
+    margin-bottom: 10px;
+}
+
+.filtro-listagem {
     width: calc(100% - 50px);
-  }
-  
+}
+
 .card {
-    max-width: 300px;
+    width: 50%;
     margin-bottom: 250px;
     float: left;
     background-color: aquamarine;
@@ -33,14 +33,13 @@
     float: left;
 }
 
-.margin10{
+.margin10 {
     margin: 10px;
 }
 
 .width50 {
     width: 50%;
 }
-
 
 
 /* width: 182px */

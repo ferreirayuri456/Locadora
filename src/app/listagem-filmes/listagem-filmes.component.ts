@@ -12,16 +12,33 @@ export class ListagemFilmesComponent implements OnInit {
 
   filmes: Filme[] = [];
   page = 1;
+  texto: string;
+  genero: string;
   readonly size = 4;
-  filtros: FormGroup;  
+  filtros: FormGroup;
   generos = new FormControl();
-  generosList: string[] = ['Drama', 'Ação', 'Romance', 'Terror', 'Aventura', 'Geek', 'Sensual'];
+  generosList: Array<string>;
 
-  
+
 
   constructor(public filmeService: FilmesService, public fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.filtros = this.fb.group({
+      texto: [''],
+      genero: ['']
+    });
+
+    this.filtros.get('texto').valueChanges.subscribe((val: string) => {
+      this.texto = val;
+      this.resetarConsulta();
+    });
+
+    this.filtros.get('genero').valueChanges.subscribe((val: string) => {
+      this.genero = val;
+      this.resetarConsulta();
+    });
+    this.generosList = ['Drama', 'Ação', 'Romance', 'Terror', 'Aventura', 'Geek', 'Sensual'];
     this.listarFilmes();
   }
 
@@ -31,6 +48,13 @@ export class ListagemFilmesComponent implements OnInit {
 
   private listarFilmes(): void {
     this.page++;
-    this.filmeService.listar(this.page, this.size).subscribe((filme: Filme[]) => this.filmes.push(...filme));
+    this.filmeService.listar(this.page, this.size, this.texto, this.genero)
+    .subscribe((filme: Filme[]) => this.filmes.push(...filme));
+  }
+
+  private resetarConsulta(): void {
+    this.page = 0;
+    this.filmes = [];
+    this.listarFilmes();
   }
 }
